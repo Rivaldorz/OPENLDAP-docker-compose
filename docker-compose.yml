@@ -1,4 +1,4 @@
-version: "3.7"
+version: '3.7'
 services:
   openldap:
     image: osixia/openldap:latest
@@ -26,6 +26,7 @@ services:
       - LDAP_READONLY_USER_PASSWORD=user
     networks:
       - openldap
+
   phpldapadmin:
     image: osixia/phpldapadmin:latest
     container_name: phpldapadmin
@@ -41,6 +42,6 @@ services:
       - openldap
 
 
- networks:
+networks:
    openldap:
      driver: bridge
